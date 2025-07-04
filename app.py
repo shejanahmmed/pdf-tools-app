@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file
 from PyPDF2 import PdfMerger
+from docx2pdf import convert
 from pdf2image import convert_from_path
 from PIL import Image
 import os
@@ -39,6 +40,19 @@ def merge():
         return send_file(output_path, download_name=f'{filename_input}.pdf', as_attachment=True)
     return render_template('merge.html')
 
+@app.route('/doc2pdf', methods=['GET', 'POST'])
+def doc_to_pdf():
+    if request.method == 'POST':
+        file = request.files['docx']
+        filename_input = request.form.get('filename', 'converted').strip() or 'converted'
+        input_path = os.path.join(UPLOAD_FOLDER, str(uuid.uuid4()) + ".docx")
+        output_path = os.path.join(UPLOAD_FOLDER, f"{filename_input}.pdf")
+        file.save(input_path)
+        convert(input_path, output_path)
+        os.remove(input_path)
+        return send_file(output_path, download_name=f'{filename_input}.pdf', as_attachment=True)
+    return render_template('doc2pdf.html')
+
 @app.route('/img2pdf', methods=['GET', 'POST'])
 def img_to_pdf():
     if request.method == 'POST':
@@ -58,7 +72,7 @@ def pdf_to_img():
         path = os.path.join(UPLOAD_FOLDER, str(uuid.uuid4()) + ".pdf")
         pdf_file.save(path)
 
-        poppler_path = None  # Adjust if poppler is not in PATH
+        poppler_path = None
 
         images = convert_from_path(path, poppler_path=poppler_path)
         os.remove(path)
