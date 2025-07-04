@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Tools</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-light: #1e1e1e;
+      --accent: #00bcd4;
+      --text: #e0e0e0;
+      --hover: #263238;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    li {
+      margin: 1rem 0;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      background-color: var(--bg-light);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    a:hover {
+      background-color: var(--hover);
+      color: var(--accent);
+      transform: scale(1.03);
+    }
+
+    .container {
+      padding: 2rem;
+      border-radius: 20px;
+      background-color: var(--bg-light);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+      filter: invert(100%);
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PDF Tools Web App</h1>
+    <ul>
+      <li><a href="/merge">Merge PDFs</a></li>
+      <li><a href="/img2pdf">Image to PDF</a></li>
+      <li><a href="/pdf2img">PDF to Image</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>
+      Made with ❤️ by <strong>Farjan Ahmmed</strong>
+    </p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/farjan-ahmmed/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/shejanahmmed" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+      </a>
+
+      <a href="https://www.facebook.com/beingshejan/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/iamshejan/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+      </a>
+    </div>
+  </footer>

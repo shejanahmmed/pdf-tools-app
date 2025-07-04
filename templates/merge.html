@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merge PDFs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-light: #1e1e1e;
+      --accent: #00bcd4;
+      --text: #e0e0e0;
+      --hover: #263238;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    .container {
+      background-color: var(--bg-light);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+    h2 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    input[type="file"], input[type="text"], button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: var(--accent);
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #00acc1;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      text-align: left;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Merge PDFs</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="pdfs" accept="application/pdf" multiple required />
+      <label for="filename">New filename :</label>
+      <input type="text" id="filename" name="filename" value="merged" required />
+      <button type="submit">Merge</button>
+    </form>
+    <a href="/" class="back">⬅ Back to Home</a>
+  </div>
+</body>
+</html>
